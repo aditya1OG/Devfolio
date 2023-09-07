@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeIn-2 {
+  0% {
+    opacity: 0;
+    transform: translatex(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn-4 {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn-5 {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flip {
+  0%, 50% {
+    transform: rotate(-5deg);
+  }
+
+  50%, 100% {
+    transform: rotate(1deg);
+  }
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.image {
+  animation: jump 2s infinite ease-in-out alternate;        
+}
+
+@keyframes jump {
+  from {
+    transform: translatey(-25px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
+
+/* Transition */
+.animate-fadeIn-1 {
+  animation: fadeIn-1 1s ease 2s backwards;
+  animation: flip 2s infinite;
+  /* animation-delay: calc(.2c * var(--i)); */
+}
+
+.animate-fadeIn-2 {
+  animation: fadeIn-2 infinite ease 2s forwards;
+}
+
+.animate-fadeIn-3, .animate-fadeIn-4 {
+  text-transform: uppercase;
+  background-image: linear-gradient(-225deg,
+      #231557 0%,
+      #44107a 29%,
+      #ff1361 67%,
+      #fff800 100%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 35px;
+}
+
+.animate-fadeIn-4 {
+  animation: fadeIn-4 3.5s infinite 1s forwards;
+}
+
+.animate-fadeIn-5 {
+  animation: fadeIn-5 2.5s ease 1s backwards;
+}
+
+.down-arrow {
+  animation: arrowBlink 1s infinite
+}
+
+@keyframes arrowBlink {
+  0% {
+    opacity: 100;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
